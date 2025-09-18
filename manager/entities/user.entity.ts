@@ -15,6 +15,6 @@ export class User {
   @Column()
   password: string; // Hash this in production
 
-  @ManyToOne(() => Role, (role) => role.users)
-  role: Role; // References a Role entity
+  // @ManyToOne(() => Role, (role) => role.users)
+  // role: Role; // References a Role entity
 }

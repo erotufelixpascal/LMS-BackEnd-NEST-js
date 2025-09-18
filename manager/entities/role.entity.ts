@@ -12,6 +12,6 @@ export class Role {
   @Column({ nullable: true })
   description: string; // e.g., 'Manages branch operations'
 
-  @OneToMany(() => User, (user) => user.role)
-  users: User[]; // Links to users with this role
+  @Column({ nullable: true })
+  permissions: string[]; // e.g., ['create_loan', 'approve_loan']
 }
