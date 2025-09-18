@@ -12,6 +12,6 @@ export class Role {
   @Column({ nullable: true })
   description: string; // e.g., 'Manages branch operations'
 
-  @Column({ nullable: true })
+  @Column("text", { array: true, default: [] })
   permissions: string[]; // e.g., ['create_loan', 'approve_loan']
 }
