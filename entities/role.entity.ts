@@ -1,17 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { User } from './user.entity'; // Adjust path
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Role {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column({ type: 'varchar', unique: true })
   name: string; // e.g., 'branch_manager', 'loan_officer'
 
-  @Column({ nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   description: string; // e.g., 'Manages branch operations'
 
-  @Column("text", { array: true, default: [] })
+  @Column('text', { array: true, default: [] })
   permissions: string[]; // e.g., ['create_loan', 'approve_loan']
 }
