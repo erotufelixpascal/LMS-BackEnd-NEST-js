@@ -37,4 +37,8 @@ function loadDbConfig() {
 export const env = {
   port: Number(process.env.PORT ?? 3000),
   db: loadDbConfig(),
+  jwt: {
+    secret: process.env.JWT_SECRET ?? 'dev-only-secret-change-me',
+    expiresIn: process.env.JWT_EXPIRES_IN ?? '2h',
+  },
 };
