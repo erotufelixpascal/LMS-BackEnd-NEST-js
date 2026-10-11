@@ -1,17 +1,16 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column({ type: 'varchar' })
-  username: string;
+  username!: string;
 
   @Column({ type: 'varchar' })
-  email: string;
+  email!: string;
 
   @Column({ type: 'varchar' })
-  password: string; // Hash this in production
+  password!: string; // Hash this in production
 }
